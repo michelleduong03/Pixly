@@ -131,7 +131,7 @@ import {
               <img src="../assets/linkedin.png" alt="linkedin" />
               <Box>
                 <Typography color={main} fontWeight="500">
-                  Linkedin
+                  LinkedIn
                 </Typography>
                 <Typography color={medium}>Network Platform</Typography>
               </Box>
