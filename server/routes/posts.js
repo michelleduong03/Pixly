@@ -8,6 +8,8 @@ const router = express.Router();
 router.get("/", verifyToken, getFeedPosts); // grab user feed when on homepage 
 router.get("/:userId/posts",  verifyToken, getUserPosts); // grab only relevant users posts
 
+// app.post('/posts/:id/comment', addComment);
+
 
 // UPDATE
 router.patch("/:id/like", verifyToken, likePost); // for liking or unliking post

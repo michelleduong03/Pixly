@@ -20,6 +20,7 @@ const postSchema = mongoose.Schema ( {
     likes: {
          type: Map, // if not liked, remove from map
          of: Boolean,
+        //  default: {},
     },
     comments: {
         type: Array,
