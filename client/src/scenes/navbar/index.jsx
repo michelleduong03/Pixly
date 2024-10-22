@@ -41,7 +41,6 @@ const Navbar = () => {
     const alt = theme.palette.background.alt;
 
     const fullName = `${user.fname} ${user.lname}`;
-    // `${user.fname} ${user.lname}`
 
     return <FlexBetween padding="1rem 6%" backgroundColor={alt}>
         <FlexBetween gap="1.75rem">
@@ -61,7 +60,7 @@ const Navbar = () => {
             </Typography>
             {isNonMobileScreens && (
                 <FlexBetween backgroundColor={neutralLight} borderRadius="9px" gap="3rem" padding="0.1rem 1.5rem">
-                    <InputBase placeholder="Search..." />
+                    <InputBase placeholder="Search..." /> 
                     <IconButton>
                         <Search />
                     </IconButton>

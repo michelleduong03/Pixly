@@ -5,7 +5,7 @@ import PostWidget from "./PostWidget";
 
 const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts) || [];
   const token = useSelector((state) => state.token);
 
   const getPosts = async () => {
@@ -14,6 +14,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await response.json();
+    console.log('Fetched posts:', data);
     dispatch(setPosts({ posts: data }));
   };
 
@@ -37,9 +38,12 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  console.log("Current posts state:", posts); // Log current posts state
+
+
   return (
     <>
-      {posts.map(
+      {Array.isArray(posts) && posts.map(
         ({
           _id,
           userId,
@@ -70,4 +74,6 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   );
 };
 
+
 export default PostsWidget;
+

@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     mode: "light",
     user: null,
-    // user: { friends: [] },
     token: null,
     posts: [],
 };
@@ -39,7 +38,7 @@ export const authSlice = createSlice({
                 return post;
             });
             state.posts = updatedPosts;
-        }
+        },
      }
 })
 
